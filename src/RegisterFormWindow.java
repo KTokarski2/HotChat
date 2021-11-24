@@ -3,7 +3,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class HotChatRegisterForm extends JFrame implements ActionListener {
+public class RegisterFormWindow extends JFrame implements ActionListener {
 
     //Icon
     ImageIcon icon = new ImageIcon("Assets/HotChatIcon.png");
@@ -26,12 +26,14 @@ public class HotChatRegisterForm extends JFrame implements ActionListener {
     JTextField cityTextField = new JTextField();
     JComboBox genderComboBox = new JComboBox(gender);
     JComboBox countryComboBox = new JComboBox(country);
+    JButton registerButton = new JButton("Register");
+    JButton resetButton = new JButton("Reset");
 
     //Container
     Container container = getContentPane();
 
 
-    public HotChatRegisterForm (int width, int height, String title) {
+    public RegisterFormWindow(int width, int height, String title) {
 
         this.setSize(width,height);
         this.setTitle(title);
@@ -56,6 +58,14 @@ public class HotChatRegisterForm extends JFrame implements ActionListener {
         genderLabel.setBounds(20,170,140,70);
         cityLabel.setBounds(20,220,100,70);
         countryLabel.setBounds(20,270,100,70);
+        loginTextField.setBounds(180,43,165,23);
+        passwordTextField.setBounds(180,93,165,23);
+        emailTextField.setBounds(180,143,165,23);
+        genderComboBox.setBounds(180,193,165,23);
+        cityTextField.setBounds(180,243,165,23);
+        countryComboBox.setBounds(180,293,165,23);
+        registerButton.setBounds(70,400,100,35);
+        resetButton.setBounds(200,400,100,35);
 
     }
 
@@ -66,11 +76,28 @@ public class HotChatRegisterForm extends JFrame implements ActionListener {
         container.add(genderLabel);
         container.add(cityLabel);
         container.add(countryLabel);
+        container.add(loginTextField);
+        container.add(passwordTextField);
+        container.add(emailTextField);
+        container.add(genderComboBox);
+        container.add(cityTextField);
+        container.add(countryComboBox);
+        container.add(registerButton);
+        container.add(resetButton);
+    }
+
+    public void addActionEvent() {
+        resetButton.addActionListener(this);
+        registerButton.addActionListener(this);
     }
 
 
     @Override
     public void actionPerformed(ActionEvent e) {
+
+        if (e.getSource() == registerButton) {
+            //HotChatUser testUserNew = new HotChatUser(loginTextField.getText(),passwordTextField.getText(),)
+        }
 
     }
 }

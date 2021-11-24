@@ -1,6 +1,6 @@
-public class HotChatUser {
+public class User {
 
-    String userID;
+    int userID;
     String login;
     String password;
     String email;
@@ -8,8 +8,10 @@ public class HotChatUser {
     String city;
     String country;
 
-    public HotChatUser(String userID, String login, String password, String email, String gender, String city, String country) {
-        this.userID = userID;
+
+    public User(String login, String password, String email, String gender, String city, String country) {
+
+        userID = (int)Math.random();
         this.login = login;
         this.password = password;
         this.email = email;
@@ -18,11 +20,11 @@ public class HotChatUser {
         this.country = country;
     }
 
-    public String getUserID() {
+    public int getUserID() {
         return userID;
     }
 
-    public void setUserID(String userID) {
+    public void setUserID(int userID) {
         this.userID = userID;
     }
 

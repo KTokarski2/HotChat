@@ -3,11 +3,11 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class HotChatLogin extends JFrame implements ActionListener {
+public class LoginWindow extends JFrame implements ActionListener {
 
     //testUser
 
-    HotChatUser testUser = new HotChatUser("1","Chris","doopa", "example@exmp.com", "Male", "Warsaw","Poland");
+    User testUser = new User("Chris","doopa", "example@exmp.com", "Male", "Warsaw","Poland");
 
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -26,7 +26,7 @@ public class HotChatLogin extends JFrame implements ActionListener {
     //Container
     Container container = getContentPane();
 
-    public HotChatLogin(int width, int height, String title) {
+    public LoginWindow(int width, int height, String title) {
 
         this.setSize(width,height);
         this.setTitle(title);
