@@ -22,6 +22,7 @@ public class LoginWindow extends JFrame implements ActionListener {
     JButton loginButton = new JButton("Login");
     JButton resetButton = new JButton("Reset");
     JCheckBox showPassword = new JCheckBox("Show Password");
+    JButton registerButton = new JButton("Register");
 
     //Container
     Container container = getContentPane();
@@ -54,6 +55,7 @@ public class LoginWindow extends JFrame implements ActionListener {
         showPassword.setBounds(150,250,150,30);
         loginButton.setBounds(50,300,100,30);
         resetButton.setBounds(200,300,100,30);
+        registerButton.setBounds(100,380,140,30);
     }
 
     public void addComponentsToContainer() {
@@ -64,12 +66,14 @@ public class LoginWindow extends JFrame implements ActionListener {
         container.add(loginButton);
         container.add(showPassword);
         container.add(resetButton);
+        container.add(registerButton);
     }
 
     public void addActionEvent() {
         loginButton.addActionListener(this);
         resetButton.addActionListener(this);
         showPassword.addActionListener(this);
+        registerButton.addActionListener(this);
     }
 
 
@@ -102,6 +106,10 @@ public class LoginWindow extends JFrame implements ActionListener {
             } else {
                 userPasswordTextField.setEchoChar('*');
             }
+        }
+
+        if(e.getSource() == registerButton){
+            RegisterFormWindow hotChatRegisterForm = new RegisterFormWindow(380,550,"Register to HotChat");
         }
 
 

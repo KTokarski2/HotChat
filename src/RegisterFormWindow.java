@@ -2,8 +2,11 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.*;
 
 public class RegisterFormWindow extends JFrame implements ActionListener {
+
+    String usersFile = "Users.txt";
 
     //Icon
     ImageIcon icon = new ImageIcon("Assets/HotChatIcon.png");
@@ -96,7 +99,7 @@ public class RegisterFormWindow extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
 
         if (e.getSource() == registerButton) {
-            //HotChatUser testUserNew = new HotChatUser(loginTextField.getText(),passwordTextField.getText(),)
+            
         }
 
     }
