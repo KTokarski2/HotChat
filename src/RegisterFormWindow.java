@@ -2,11 +2,14 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.*;
+import java.util.HashMap;
+import java.util.Map;
 
 public class RegisterFormWindow extends JFrame implements ActionListener {
 
     String usersFile = "Users.txt";
+    int usersRegistered = 0;
+    Map<Integer,User> registeredUsers = new HashMap<>();
 
     //Icon
     ImageIcon icon = new ImageIcon("Assets/HotChatIcon.png");
@@ -99,7 +102,10 @@ public class RegisterFormWindow extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
 
         if (e.getSource() == registerButton) {
-            
+            User newUser = new User(loginTextField.getText(),passwordTextField.getText(),emailTextField.getText(),genderComboBox.getToolTipText(),cityTextField.getText(),countryComboBox.getToolTipText());
+            registeredUsers.put(usersRegistered,newUser);
+            usersRegistered++;
+
         }
 
     }
