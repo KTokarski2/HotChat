@@ -34,6 +34,7 @@ public class RegisterFormWindow extends JFrame implements ActionListener {
     JComboBox countryComboBox = new JComboBox(country);
     JButton registerButton = new JButton("Register");
     JButton resetButton = new JButton("Reset");
+    JButton backToLoginButton = new JButton("Back");
 
     //Container
     Container container = getContentPane();
@@ -72,6 +73,7 @@ public class RegisterFormWindow extends JFrame implements ActionListener {
         countryComboBox.setBounds(180,293,165,23);
         registerButton.setBounds(70,400,100,35);
         resetButton.setBounds(200,400,100,35);
+        backToLoginButton.setBounds(90,460,190,35);
 
     }
 
@@ -90,16 +92,23 @@ public class RegisterFormWindow extends JFrame implements ActionListener {
         container.add(countryComboBox);
         container.add(registerButton);
         container.add(resetButton);
+        container.add(backToLoginButton);
     }
 
     public void addActionEvent() {
         resetButton.addActionListener(this);
         registerButton.addActionListener(this);
+        backToLoginButton.addActionListener(this);
     }
 
 
     @Override
     public void actionPerformed(ActionEvent e) {
+
+        if(e.getSource() == backToLoginButton) {
+            Globals.registerFormWindow.dispose();
+            Globals.loginWindow = new LoginWindow(370,600,"Welcome to HotChatApp");
+        }
 
         if (e.getSource() == registerButton) {
             User newUser = new User(loginTextField.getText(),passwordTextField.getText(),emailTextField.getText(),genderComboBox.getToolTipText(),cityTextField.getText(),countryComboBox.getToolTipText());
