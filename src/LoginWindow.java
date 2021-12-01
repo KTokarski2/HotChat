@@ -5,6 +5,8 @@ import java.awt.event.ActionListener;
 
 public class LoginWindow extends JFrame implements ActionListener {
 
+
+
     //testUser
 
     User testUser = new User("Chris","doopa", "example@exmp.com", "Male", "Warsaw","Poland");
@@ -42,6 +44,14 @@ public class LoginWindow extends JFrame implements ActionListener {
 
 
     }
+
+
+
+    public static void main(String [] args){
+        Globals.loginWindow = new LoginWindow(370,600,"Welcome to HotChatApp!");
+    }
+
+
 
     public void setLayoutManager() {
         container.setLayout(null);
@@ -109,7 +119,8 @@ public class LoginWindow extends JFrame implements ActionListener {
         }
 
         if(e.getSource() == registerButton){
-            RegisterFormWindow hotChatRegisterForm = new RegisterFormWindow(380,550,"Register to HotChat");
+            Globals.registerFormWindow = new RegisterFormWindow(380,550,"Register to HotChat");
+            Globals.loginWindow.dispose();
         }
 
 
